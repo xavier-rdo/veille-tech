@@ -4,6 +4,8 @@
 * [Les images Docker](#images)
 * [Les containers](#containers)
 * [Les volumes](#volumes)
+* [Docker Compose](#compose)
+* [Exemple](#exemple)
 
 ##Références :
 
@@ -72,6 +74,8 @@ $ # Arrêter un container (cf. docker ps pour obtenir l'identifiant du container
 $ docker stop container_id
 ```
 
+###Status container (docker inspect)
+
 ###Mapper des ports
 
 ##<a name="volumes">Les volumes
@@ -82,4 +86,6 @@ $ docker stop container_id
 
 ###Lier un volume du host à un container
 
-##Docker Compose
+##<a name="compose">Docker Compose
+
+##<a name="exemple">Exemple
