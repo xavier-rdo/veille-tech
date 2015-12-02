@@ -2,6 +2,7 @@
 
 * [Gestion des paquets](#paquets)
 * [Dossiers et fichiers](#files)
+* [Configuration matérielle et logicielle](#hardware)
 
 ##<a name="paquets"></a>Gestion des paquets
 
@@ -45,4 +46,21 @@ $ tar -zxvf votre_archive.tar.gz
 -- f : utilise le fichier passé en paramètre
 -- v : mode verbeux
 -- z : compression Gzip
+```
+##<a name="hardware"></a>Configuration matérielle et logicielle
+
+```
+-- Version du noyau Linux (ex: 3.13.0-71-generic)
+$ uname -r
+-- Type du processeur (ex: x86_64)
+$ uname -p
+-- Plate-forme matérielle (ex: x86_64)
+$ uname -i
+
+-- LSB : Linux Standard Base / Informations sur la distribution Linux
+$ lsb_release --all
+-- Description:  Ubuntu 14.04.3 LTS
+-- Release:    14.04
+-- Codename:   trusty
+
 ```
