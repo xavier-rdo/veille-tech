@@ -20,7 +20,7 @@ Réf. : [https://docs.docker.com/engine/installation/ubuntulinux/](https://docs.
 
 ```
 $ # Ajouter une nouvelle clé GPG :
-$ $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 
 $ sudo touch /etc/apt/sources.list.d/docker.list
 $ sudo echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" >> /etc/apt/sources.list.d/docker.list
@@ -45,6 +45,8 @@ $ docker images
 $ # Télécharger une image :
 $ docker pull tutum/mongodb
 ```
+
+@todo : supprimer une image
 
 ##<a name="containers">Les containers
 
@@ -74,6 +76,8 @@ $ # Arrêter un container (cf. docker ps pour obtenir l'identifiant du container
 $ docker stop container_id
 ```
 
+@todo : exécuter une version donnée
+
 ###Status container (docker inspect)
 
 ###Mapper des ports
@@ -89,3 +93,6 @@ $ docker stop container_id
 ##<a name="compose">Docker Compose
 
 ##<a name="exemple">Exemple
+
+[Dernière mise à jour : novembre 2015]
+[Version de référence : Docker 1.8.*]
