@@ -2,7 +2,8 @@
 
 * [Gestion des paquets](#paquets)
 * [Dossiers et fichiers](#files)
-* [Configuration matérielle et logicielle](#hardware)
+* [Mémo Vim](#vim)
+* [Commandes utiles](#tips)
 
 ##<a name="paquets"></a>Gestion des paquets
 
@@ -47,7 +48,14 @@ $ tar -zxvf votre_archive.tar.gz
 -- v : mode verbeux
 -- z : compression Gzip
 ```
-##<a name="hardware"></a>Configuration matérielle et logicielle
+
+##<a name="vim"></a>Mémo Vim
+
+
+
+##<a name="tips"></a>Commandes utiles
+
+###Configuration matérielle et logicielle (*uname*)
 
 ```
 -- Version du noyau Linux (ex: 3.13.0-71-generic)
@@ -56,11 +64,14 @@ $ uname -r
 $ uname -p
 -- Plate-forme matérielle (ex: x86_64)
 $ uname -i
+```
 
+###Connaître la distribution (*lsb_release*)
+
+```
 -- LSB : Linux Standard Base / Informations sur la distribution Linux
 $ lsb_release --all
 -- Description:  Ubuntu 14.04.3 LTS
 -- Release:    14.04
 -- Codename:   trusty
-
 ```
