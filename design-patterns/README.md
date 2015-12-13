@@ -14,6 +14,7 @@
 
 * [Chain of responsability](chain-of-responsability.md)
 * [Composite](composite.md)
+* [Observer](observer.md)
 
 ##Liens utiles
 
