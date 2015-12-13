@@ -19,7 +19,7 @@ Un système de fichiers :
 * les fichiers représentent des feuilles
 * Quel que soit le composant (répertoire ou fichier), il est possible de le renommer, le supprimer, le déplacer, etc.
 
-Autres exemples : les bibliothèques de composants graphiques Java (Swing) qui définissent des conteneurs pouvant accueillir d'autres conteneurs (Frames, Panels, etc.), les formulaires et sous-formulaires de Symfony, la réprésentation d'un organigramme d'entreprise, les traitements de texte (sections, paragraphes, textes, etc.), des gestionnaire de tâches (et sous-tâches), etc.
+Autres exemples : les bibliothèques de composants graphiques Java (Swing) qui définissent des conteneurs pouvant accueillir d'autres conteneurs (Frames, Panels, etc.), les formulaires et sous-formulaires de Symfony, la réprésentation d'un organigramme d'entreprise, les traitements de texte (sections, paragraphes, textes, etc.), un gestionnaire de tâches et sous-tâches, etc.
 
 ##Diagramme du composite :
 
@@ -47,4 +47,4 @@ Il modélise donc des services (class *Department*) et des employés (class *Emp
 Il s'appuie sur deux interfaces :
 
 * L'interface *Skillable* implémentée par tous les composants/noeuds de la structure (service ou employé) ; c'est le dénominateur commun de tous les noeuds ;
-* L'interface *SkillableComposite* implémentée uniquement par les élements composites, à savoir les services (et donc pas par les feuilles, c'est-à-dire les employés).
+* L'interface *SkillableComposite* implémentée uniquement par les élements composites, à savoir les services (et donc pas par les feuilles, c'est-à-dire les employés) ; elle expose les méthodes de gestion des enfants qui constituent l'élément composite (add, remove, etc.) ;
