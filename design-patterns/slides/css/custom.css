@@ -2,6 +2,10 @@ table.bibliography img {
 	height: 200px;
 }
 
+table.design-pattern-list {
+	font-size: 0.6em;
+}
+
 li.frown {
 	background-image: url(../images/frown.png);
 	background-repeat: no-repeat;

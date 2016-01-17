@@ -155,25 +155,159 @@
 				</section>				
 
 				<section>
-					<section id="fragments">
-						<h2>Rappels UML</h2>
+					<section id="uml">
+						<h2>Rappels UML (relations)</h2>
+							<table>
+								<tr class="fragment">
+									<td>
+										<ul>
+											<li>Association/Composition (has-a)</li>
+											<li>Association/Aggregation (has-a)</li>
+										</ul>
+									</td>
+									<td><img src="images/uml/association.png" width="125%"></td>
+								</tr>
+								<tr class="fragment">
+									<td>Héritage/Implémentation (is-a)</td>
+									<td><img src="images/uml/inheritance.png"></td>
+								</tr>
+								<tr class="fragment">
+									<td>Dépendance (uses)</td>
+									<td><img src="images/uml/dependency.png"></td>
+								</tr>
+								<tr class="fragment">
+									<td colspan="2">
+									Source: <a href="https://en.wikipedia.org/wiki/Class_diagram#Relationships" target="_blank">Diagrammes de classe / relations</a>
+									</td>
+								</tr>	
+							</table>
 					</section>
 				</section>
 
 				<section>
-					<section id="fragments">
-						<h2>Liste des principaux Design patterns</h2>
+					<section id="creation-design-patterns">
+						<h2>Les patterns de création</h2>
+						<table class="design-pattern-list">
+							<tr>
+								<td>Abstract factory</td>
+								<td>Allows a client to create families of objects without specifying their concrete classes</td>
+							</tr>
+							<tr>
+								<td>Factory method</td>
+								<td>Subclasses decide which concrete classes to create</td>
+							</tr>
+							<tr>
+								<td>Builder</td>
+								<td>Encapsulate the construction of a product and allow it to be constructed in steps</td>
+							</tr>
+							<tr>
+								<td>Prototype</td>
+								<td>Creates objects by cloning an existing object</td>
+							</tr>
+							<tr>
+								<td>Singleton</td>
+								<td>Restricts object creation for a class to only one instance</td>
+							</tr>
+						</table> 
 					</section>
 				</section>
 
 				<section>
-					<section id="fragments">
+					<section id="structural-design-patterns">
+						<h2>Les patterns structuraux</h2>
+						<table class="design-pattern-list">
+							<tr>
+								<td>Adapter</td>
+								<td>Allows classes with incompatible interfaces to work together</td>
+							</tr>
+							<tr>
+								<td>Bridge</td>
+								<td>Decouples an abstraction from its implementation so that the two can vary independently</td>
+							</tr>
+							<tr>
+								<td>Composite</td>
+								<td>Treat collections of objects and individual objects uniformly</td>
+							</tr>
+							<tr>
+								<td>Decorator</td>
+								<td>Wraps an object to provide new behavior</td>
+							</tr>
+							<tr>
+								<td>Facade</td>
+								<td>Simplifies the interface of a set of classes</td>
+							</tr>
+							<tr>
+								<td>Flyweight</td>
+								<td>Reduces the cost of creating and manipulating a large number of similar objects</td>
+							</tr>
+							<tr>
+								<td>Proxy</td>
+								<td>Wraps an object to control access to it</td>
+							</tr>
+						</table> 
+					</section>
+				</section>
+
+				<section>
+					<section id="behavior-design-patterns">
+						<h2>Les patterns comportementaux</h2>
+						<table class="design-pattern-list">
+							<tr>
+								<td>Chain of Responsability</td>
+								<td>Delegates commands to a chain of processing objects</td>
+							</tr>
+							<tr>
+								<td>Command</td>
+								<td>Creates objects which encapsulate actions and parameters</td>
+							</tr>
+							<tr>
+								<td>Interpreter</td>
+								<td>Implements a specialized language</td>
+							</tr>
+							<tr>
+								<td>Iterator</td>
+								<td>Accesses the elements of an object sequentially without exposing its underlying representation</td>
+							</tr>
+							<tr>
+								<td>Mediator</td>
+								<td>Allows loose coupling between classes by being the only class that has detailed knowledge of their methods</td>
+							</tr>
+							<tr>
+								<td>Memento</td>
+								<td>Provides the ability to restore an object to its previous state (undo)</td>
+							</tr>
+							<tr>
+								<td>Observer</td>
+								<td>Publish/Subscribe pattern which allows a number of observer objects to see an event</td>
+							</tr>
+							<tr>
+								<td>State</td>
+								<td>Allows an object to alter its behavior when its internal state changes</td>
+							</tr>
+							<tr>
+								<td>Strategy</td>
+								<td>Allows one of a family of algorithms to be selected on-the-fly at runtime</td>
+							</tr>
+							<tr>
+								<td>Template method</td>
+								<td>Defines the skeleton of an algorithm as an abstract class, allowing its subclasses to provide concrete behavior</td>
+							</tr>
+							<tr>
+								<td>Visitor</td>
+								<td>Separates an algorithm from an object structure by moving the hierarchy of methods into one object</td>
+							</tr>
+						</table>
+					</section>
+				</section>								
+
+				<section>
+					<section id="oop-solid">
 						<h2>Les principes d'une bonne conception objet (SOLID, etc.)</h2>
 					</section>
 				</section>
 
 				<section>
-					<section id="fragments">
+					<section id="pattern-anatomy">
 						<h2>Anatomie d'un pattern</h2>
 					</section>
 				</section>
