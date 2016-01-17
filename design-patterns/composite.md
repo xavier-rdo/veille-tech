@@ -48,3 +48,7 @@ Il s'appuie sur deux interfaces :
 
 * L'interface *Skillable* implémentée par tous les composants/noeuds de la structure (service ou employé) ; c'est le dénominateur commun de tous les noeuds ;
 * L'interface *SkillableComposite* implémentée uniquement par les élements composites, à savoir les services (et donc pas par les feuilles, c'est-à-dire les employés) ; elle expose les méthodes de gestion des enfants qui constituent l'élément composite (add, remove, etc.) ;
+
+## Exemple de l'interface de Symfony `FormInterface`
+
+Composant 'Form' de Symfony : [l'interface FormInterface](https://github.com/symfony/form/blob/master/FormInterface.php)
