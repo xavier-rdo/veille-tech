@@ -1,0 +1,10 @@
+table.bibliography img {
+	height: 200px;
+}
+
+li.frown {
+	background-image: url(../images/frown.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+}
