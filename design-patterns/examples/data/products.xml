@@ -1,0 +1,16 @@
+<xml>
+  <productList>
+    <product>
+        <id>1</id>
+        <name>Crème de soin</name>
+        <description>Le produit préféré des footballeurs</description>
+        <price>25.00</price>
+    </product>
+    <product>
+        <id>2</id>
+        <name>Savon</name>
+        <description>Offre promotionnelle "découverte" pour les punks à chiens</description>
+        <price>5.00</price>
+    </product>
+  </productList>
+</xml>

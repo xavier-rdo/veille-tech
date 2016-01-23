@@ -9,11 +9,11 @@
 
 ##<a name="structure"></a>Structuraux (Structural)
 
+* [Composite](composite.md)
 
 ##<a name="behavior"></a>Comportementaux (Behavioral)
 
-* [Chain of responsability](chain-of-responsability.md)
-* [Composite](composite.md)
+* [Chain of responsibility](chain-of-responsibility.md)
 * [Observer](observer.md)
 
 ##Liens utiles
