@@ -43,7 +43,7 @@ abstract class AbstractProductExtractor
      */
     public function extractProducts(SplFileObject $productFile)
     {
-        echo static::CLASS.":\n";
+        echo static::CLASS.":\n"; // Only for debug & demo purposes
         if (!$this->support($productFile)) {
             throw new \InvalidArgumentException('Unsupported file format');
         }

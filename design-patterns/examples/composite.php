@@ -1,8 +1,17 @@
 <?php
 
 /**
+ * "COMPOSITE" DESIGN PATTERN - EXEMPLE
+ *
  * Exemple d'implémentation du design pattern Composite en PHP
  * (structure arborescente constituée de composants, branches ou feuilles)
+ *
+ * Description (GoF) :
+ *
+ * <blockquote>
+ *    <strong>The composite pattern</strong> allows you to compose objects into tree structures to represent
+ *    part-whole hierarchies. Composite lets clients treat individual obects and composition of objects uniformly.
+ * </blockquote>
  *
  * Elle modélise l'organigramme d'une entreprise (services et employés).
  * Les services incluent d'autres services et/ou des employés.
