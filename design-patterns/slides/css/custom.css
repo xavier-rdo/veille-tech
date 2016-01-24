@@ -12,3 +12,8 @@ li.frown {
 	background-position: left center;
 	padding-left: 25px;
 }
+
+section .highlighted {
+    font-weight: bold;
+    color: #5F5FC5;
+}

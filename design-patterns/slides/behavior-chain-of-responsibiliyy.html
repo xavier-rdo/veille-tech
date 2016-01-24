@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>{{Title}}</title>
+		<title>Chain of Responsibility</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,58 +41,42 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section data-markdown>
-					<script type="text/template">
-						# {{Title}}
-					</script>
-				</section> 
-
-				<section data-markdown>
-					<script type="text/template">
-						## {{Secundary title}}
-					</script>
-				</section> 
-
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
+				<section>
+					<h1>DESIGN PATTERNS</h1>
+					<h2 class="fragment highlight-blue">Chain of Responsibility</h2>
+					<strike>Creation</strike> - <strike>Structure</strike> - <strong>Behavior</strong>
 				</section>
 
 				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+					<h1>Chain of Responsibility</h1>
+					<h2>Description (GoF)</h2>
+					<blockquote>
+						Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+					</blockquote>
+					<p class="fragment">
+						<small>Voir le chapitre du livre "<a href="http://www.informit.com/articles/article.aspx?p=1398601" target="_blank">Design Patterns</a>" (GoF) consacré à ce Design Pattern sur informit.com</small>
+					</p>
+				</section>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
+				<section>
+					<h2>Diagramme</h2>
+					<img src="../images/chain-of-responsability.gif" width="140%">
+				</section>
+
+				<section>
+					<h2>Quand l'utiliser ? (GoF)</h2>
+					<ul>
+						<li class="fragment">more than one object may handle a request, and the handler isn’t known a priori. The handler should be ascertained automatically.</li>
+						<li class="fragment">you want to issue a request to one of several objects without specifying the receiver explicitly.</li>
+						<li class="fragment">the set of objects that can handle a request should be specified dynamically.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Exemple</h2>
+					<p>
+						Blah blah
+					</p>
 				</section>
 
 			</div>
