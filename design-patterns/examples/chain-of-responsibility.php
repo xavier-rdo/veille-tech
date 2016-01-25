@@ -4,7 +4,7 @@
  * "CHAIN OF RESPONSIBILITY" DESIGN PATTERN EXAMPLE
  *
  * Example inspired from spaghetti.io :
- * @link http://spaghetti.io/cont/article/a-chain-of-responsibility-implementation-inside-the-symfony-container/15/1.html#.VqWyznUR-kp
+ * @link http://spaghetti.io/cont/article/a-chain-of-responsibility-implementation-inside-the-symfony-container/15/1.html
  *
  * Definition (GoF) :
  *
@@ -13,7 +13,7 @@
  *    Chain the receiving objects and pass the request along the chain until an object handles it.
  * </blockquote>
  *
- * This example implements three concrete file handlers (Xml, Json, Csv) organized as a chain. Returning
+ * This example implements three concrete file handlers (Xml, Json, Csv) organized as a chain. Ascertaining
  * the right handler that is responsible for handling the request is the job of the chain. The chain
  * implementation is done through a $next property in each handler, pointing to its follower.
  *
@@ -118,7 +118,7 @@ abstract class AbstractProductExtractor
  * Concrete handlers that are part of the chain of responsability.
  *
  * Note that the business methods <i>parseContent</i> are not implemented as they are not
- * directly related to the Chain of Responsibility pattern. This pattern is about retrieving
+ * directly related to the Chain of Responsibility pattern. This pattern is about selecting
  * the right handler to handle a request, not about what the handler does.
  *
  * If you want a more realistic, yet perfectible, implementation, see the example

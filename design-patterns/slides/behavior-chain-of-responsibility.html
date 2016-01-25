@@ -16,6 +16,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -75,8 +76,73 @@
 				<section>
 					<h2>Exemple</h2>
 					<p>
-						Blah blah
+						<small>Inspiré de <a href="http://spaghetti.io/cont/article/a-chain-of-responsibility-implementation-inside-the-symfony-container/15/1.html" target="_blank">spaghetti.io</a></small>
 					</p>
+					<ul class="fragment">
+						<li>
+							AbstractProductExtractor
+							<ul>
+								<li>ProductJsonExtractor</li>
+								<li>ProductXmlExtractor</li>
+								<li>ProductCsvExtractor</li>
+							</ul>
+						</li>
+					</ul>
+					<p class="fragment">
+						Principe : chaque handler possède une propriété $nextHandler qui pointe sur le handler suivant dans la chaîne.
+					</p>
+
+					<p class="fragment">
+					<small class="hightlighted">https://github.com/xavier-rdo/veille-tech/blob/master/design-patterns/examples/chain-of-responsibility.php</small>
+				</section>
+
+				<section>
+					<h2>Variantes, avantages, etc.</h2>
+					<ul>
+						<li class="fragment">Plusieurs handlers pourraient traiter la requête</li>
+						<li class="fragment">La requête pourrait être encapsulée dans un objet pour contenir les info. nécessaires au traitement</li>
+						<li class="fragment">La construction de la chaîne est à la charge de l'émetteur : flexibilité</li>
+						<li class="fragment">Traitement attendu ou optionnel ? (un handler doit-il nécessairement traiter la requête ?)</li>
+						<li class="fragment">Evol: Objet dédié à la construction de la chaîne (déclaration du service dans le DIC Symfony)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Bilan du pattern</h2>
+					<ul>
+						<li><strong>S</strong>ingle responsability</li>
+						<li><strong>O</strong>pen / Close</li>
+						<li><strong>L</strong>iskov substitution</li>
+						<li><strong>I</strong>nterface segregation</li>
+						<li><strong>D</strong>ependency Injection</li>
+					</ul>
+				</section>
+
+				<section  data-markdown>
+					<script type="text/template">
+					## Pile au lieu de chaîne ?
+
+					```php
+					// Stack of handlers (not a chain) :
+					class MyHandlerList {
+
+						private $handlers;
+
+						public function __construct(array $handlers) {
+							$this->handlers = $handlers;
+						}
+
+						public function resolve($request) {
+							foreach ($this->handlers as $handler) {
+								if ($handler->support($request) {
+									return $handler->handle($request);
+								}
+							}
+							return false; // or throw Exception ...
+						}
+					}
+					```
+					</script>
 				</section>
 
 			</div>

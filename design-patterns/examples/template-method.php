@@ -12,7 +12,7 @@
  * </blockquote>
  *
  * The following example shows classes that extract products from import files and hydrate them into a ProductDto.
- * Import files may have different formats : CSV, json or XML.
+ * Import files may have different formats : CSV, JSON or XML.
  *
  * The base class AbstractProductExtractor defines the main operation in its 'extractProducts' method.
  * @see AbstractProductExtractor::extractProducts
