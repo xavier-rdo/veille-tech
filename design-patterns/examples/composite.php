@@ -43,7 +43,7 @@ interface SkillableComposite extends Skillable
 {
     public function add(Skillable $skillable);
 
-    public function remove(Skillable $killable);
+    public function remove(Skillable $skillable);
 }
 
 /**
@@ -137,6 +137,7 @@ $back  = new Department("R&d / Backend");
 $front->add($camille);
 $front->add($thomas);
 $back->add($benjamin);
+$back->add($thomas);
 $rd->add($front);
 $rd->add($back);
 
