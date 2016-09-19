@@ -63,18 +63,44 @@
 
 				<section>
 					<h2>Les interfaces de la SPL</h2>
+					<ul class="fragment">
+						<li><a href="http://php.net/manual/fr/class.splobserver.php">http://php.net/manual/fr/class.splobserver.php</a></li>
+						<li><a href="http://php.net/manual/fr/class.splsubject.php">http://php.net/manual/fr/class.splsubject.php</a></li>
+					</ul>
 				</section>
 
 				<section>
 					<h2>Exemple</h2>
 					<p>
-						Blah blah
+						Lorsqu'une commande est validée par un client, un mail de confirmation doit lui être envoyé et les stocks des aticles mis à jour.
+						<ul class="fragment">
+							<li>Sujet observé = le service qui traite la validation de la commande (CheckoutOrderHandler)</li>
+							<li>Observateurs :
+								<ul>
+							        <li>le service qui envoie le mail de confirmation (OrderConfirmationMailer)</li>
+							        <li>le service qui met à jour les stocks (StockUpdater)</li>
+							    </ul>
+							</li>
+						</ul>
 					</p>
 				</section>
 
 				<section>
 					<h2>Java</h2>
-					addListener
+	<pre>
+		public class MyFrame extends JFrame implements ActionListener {
+
+		public function init() {
+			...
+			JButton bouton = new JButton("Cliquez ici !");
+			bouton.addActionListener(this);
+		}
+
+		...
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Vous avez cliqué ici.");
+		}
+	</pre>
 				</section>
 
 				<section>
