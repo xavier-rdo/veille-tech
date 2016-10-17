@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Factories</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>DESIGN PATTERNS</h1>
+					<h2>Factories</h2>
+					<ul class="fragment highlight-blue">
+				    	<li>Factory Method</li>
+				    	<li>Abstract Factory</li>
+					</ul>
+					<p>
+					    <strong>Creation</strong> - <strike>Structure</strike> - <strike>Behavior</strike>
+					</p>
+				</section>
+
+				<section>
+					<h2>Intérêt</h2>
+					<blockquote>
+					    OOP Rule:<br/>
+						“Program to interfaces, not implementations”
+					</blockquote>
+					<small class="fragment">
+						Oui, mais à un moment, il faut bien instancier des classes concrètes ...
+					</small>
+					<blockquote class="fragment">Another OOP Rule: "Encapsulate what varies"</blockquote>
+				</section>
+
+				<section>
+					<h2>Head First Design Patterns <br/>(O'Reilly 2004)</h2>
+					<img src="images/biblio/head-first-design-patterns.jpg">
+					<p>
+					    <a href="https://www.safaribooksonline.com/library/view/head-first-design/0596007124/ch04.html" target="_blank">
+					        Chapter 4. The Factory Pattern: Baking with OO Goodness
+					    </a>
+					</p>
+				</section>
+
+				<section>
+					<h1>Factory method</h1>
+					<h2>Description (GoF)</h2>
+					<blockquote>
+						Define an interface for creating an object, but let <span class="highlighted">subclasses</span> decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Diagramme</h2>
+					<img src="../images/FactoryMethod.jpg" width="125%">
+				</section>
+
+				<section id="factory-method-participants">
+					<h2>Participants:</h2>
+					<img src="../images/FactoryMethod.jpg">
+					<p>
+						<ul>
+							<li class="fragment">Product: interface de l'objet "fabriqué" (instancié)</li>
+							<li class="fragment">ConcreteProduct: implémente l'interface Product</li>
+							<li class="fragment">Creator:
+							    <ul>
+							    	<li>Déclare la méthode Factory: <i>FactoryMethod()</i></li>
+							    	<li>Peut proposer une implémentation de méthode Factory retournant une instance de ConcreteProduct par défaut</li>
+							    	<li>peut appeler la méthode Factory pour créer un objet</li>
+							    </ul>
+							</li>
+							<li class="fragment">
+							ConcreteCreator: étend Creator pour retourner une instance de ConcreteProduct
+							</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Remarque</h2>
+					<p>Ceci est une Factory mais pas un pattern Factory (au sens du GoF) : </p>
+						<pre class="code">
+
+	class MyFactory {
+
+	public static function getInstance($type = null) {
+		switch($type) {
+		    case "a":
+		        return new A();
+		        break;
+		    case "b": 
+		        return new B();
+		        break;
+		    /* etc. */
+		}
+	}
+						</pre>
+				<small>Nota: ce n'est pas parce que ce n'est pas un pattern que c'est mal ;)</small>
+				<small>OOP Rule: <i>Encapsulate what varies</i></small>
+				</section>
+
+				<section>
+					<h2>Exemple 1: chaîne d'héritage</h2>
+					<pre class="code">
+  abstract class MyFactory {
+
+    public function getProduct(): MyProductInterface {
+        // Nota: no new myProduct() here, instanciation is defered
+        $product = $this->createProduct();
+        // ... Some common code after instantiation
+        return $product;
+    }
+
+    /**
+     * Factory method
+     * @return MyProductInterface
+     */
+    abstract protected function createProduct();
+  }
+					</pre>
+					<small>Nota: createProduct() peut prendre un paramètre en argument et instancier un produit d'un type concret en se basant sur ce paramètre (structure <i>switch</i>)</small>
+				</section>
+
+				<section>
+					<h2>Exemple 2: classe simple</h2>
+						<pre class="code">
+	class MyFactory implements FactoryInterface {
+
+		public function getProduct(): MyProductInterface {
+			$product =  $this->createProduct();
+			// ... Some common code after instantiation
+			return $product;
+		}
+
+		/**
+		 * Factory method
+		 * @return MyConcreteProduct
+		 */
+		protected function createProduct(): MyProductInterface {
+			return new MyConcreteProduct();
+		}
+	}
+						</pre>
+					<small>Intérêt: permettre d'étendre cette classe pour retourner un autre objet (ayant la même interface que MyConcreteProduct) = un hook</small>
+				</section>
+
+				<section>
+				    <h2>Remarque</h2>
+				    <small>
+				        Le design pattern <b>Method Factory</b> peut être implémenté par des services dont la principale responsabilité n'est pas l'instanciation elle-même.
+				    </small>
+				    <img src="../images/headfirst-methodfactory.jpg">
+				    <small>Extrait de <i>Head First Design Patterns</i></small>
+				</section>
+
+				<section>
+					<h1>ABSTRACT FACTORY</h1>
+					<h2>Description (GoF)</h2>
+					<blockquote>
+						Provide an interface for creating <span class="highlighted">families of related or dependent objects</span> without specifying their concrete classes.
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Diagramme</h2>
+					<img src="../images/AbstractFactory.png" width="125%">
+				</section>
+
+				<section>
+					<h2>Exemple: parser de commits SCM</h2>
+					<ul>
+						<li>Page Github</li>
+						<li>Page Gitlab</li>
+						<li>Page BitBucket</li>
+						<li>etc.</li>
+					</ul>
+					<p>En-tête HTML d'un fichier committé sur Github:</p>
+					<pre class="code">
+	&lt;div class="file-info"&gt;
+        &lt;span class="diffstat tooltipped tooltipped-e" aria-label="54 additions &amp; 
+        0 deletions"&gt;54 
+        &lt;span class="block-diff-added"&gt;&lt;/span&gt;
+        &lt;span class="block-diff-added"&gt;&lt;/span&gt;
+        &lt;span class="block-diff-added"&gt;&lt;/span&gt;
+        &lt;span class="block-diff-added"&gt;&lt;/span&gt;
+        &lt;span class="block-diff-added"&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class="user-select-contain" title="background.html"&gt;
+            background.html
+        &lt;/span&gt;      
+	&lt;/div&gt;
+					</pre>
+				</section>
+
+				<section>
+					<h2>Exemple: parser de commits SCM</h2>
+					<ul>
+						<li class="fragment"><b>Crawler</b>: conscient du DOM, connaît les XPath pour extraire l'info brute</li>
+						<li class="fragment"><b>Parser</b>: sait manipuler le HTML retourné par le crawler pour extraire l'information atomique et la structurer</li>
+						<li class="fragment">Le Parser de Github est incapable de parser le HTML retourné par le Crawler de Gitlab ou BitBucket !</li>
+						<li class="fragment">Parser + Crawler Github = une "famille", Parser + Crawler Gitlab = une autre famille, etc.</li>
+						<li class="fragment">Comment garantir que j'utilise des produits d'une même famille ? Réponse: le pattern <b>Abstract Factory</b></li>
+					</ul>
+				</section>
+
+				<section>
+					<table>
+						<tr>
+							<th>&nbsp;</th>
+							<th>Github</th>
+							<th>Gitlab</th>
+							<th>BitBucket</th>
+						</tr>
+						<tr>
+						    <td>SCMCrawlerInterface:</td>
+							<td colspan="3">
+								<pre class="code">
+    public function getProjectNameHtml();
+    public function getSummaryHtml();
+    public function getCommittedFilesHtml();
+								</pre>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>GithubCrawler</td>
+							<td>GitlabCrawler</td>
+							<td>BitBucketCrawler</td>
+						</tr>									
+						<tr>
+						    <td>SCMParserInterface:</td>
+						    <td colspan="3">
+						        <pre class="code">
+    public function parseProjectName($projectNameHtml);
+    public function parseSummary($summaryHtml);
+    public function parseCommittedFiles($committedFilesHtml);
+						        </pre>
+						    </td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>GithubParser</td>
+							<td>GitlabParser</td>
+							<td>BitBucketParser</td>
+						</tr>
+						<tr>
+							<td>SCMFactoryInterface</td>
+							<td colspan="3">
+							    <pre class="code">
+    function getCrawler();
+    public function getParser();
+							    </pre>
+							</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>GithubFactory</td>
+							<td>GitlabFactory</td>
+							<td>BitBucketFactory</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>GithubFactory</h2>
+					<pre class="code">
+    class GithubFactory implements SCMFactoryInterface  {
+
+    	public function getCrawler() {
+    		return new GitubCrawler();
+    	}
+
+    	public function getParser() {
+    		return new GithubParser();
+    	}
+    }
+					</pre>
+				</section>
+
+				<section>
+					<h2>Résumé</h2>
+					<ul>
+					    <li><span class="highlighted">Factory simple</span> (pas un DP à proprement parler)</li>
+					    <li><span class="highlighted">Factory method</span> : `new` déporté dans une méthode dédiée, un seul type d'objet retourné à la fois (une seule méthode d'instanciation par Factory)</li>
+					    <li><span class="highlighted">Abstract factory</span> : famille de produits liés fonctionnellement, plusieurs types d'objets retournés (plusieurs méthodes d'instanciation par Factory)</li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

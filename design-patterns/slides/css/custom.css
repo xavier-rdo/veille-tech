@@ -23,3 +23,7 @@ section pre.code {
     color: #000;
     width: 100%;
 }
+
+section#factory-method-participants {
+    font-size: 0.8em;
+}
