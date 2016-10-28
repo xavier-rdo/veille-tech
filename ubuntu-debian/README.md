@@ -1,5 +1,8 @@
 #Ubuntu/Debian
 
+![Logo Ubuntu](img/ubuntu-logo.png)
+![Logo Debian](img/debian-logo.png)
+
 * [Gestion des paquets](#paquets)
 * [Dossiers et fichiers](#files)
 * [Mémo Vim](#vim)
@@ -51,11 +54,35 @@ $ tar -zxvf votre_archive.tar.gz
 
 ##<a name="vim"></a>Mémo Vim
 
+###Navigation
 
+|Commande |Description         |
+|---------|--------------------|
+|`CTL`+`B`|Page up             |
+|`CTL`+`F`|Page down           |
+|nG       |Atteindre la ligne n|
+|G        |Fin de fichier      |
+|g        |Début de fichier    |
+|^        |Début de ligne      |
+|$        |Fin de ligne        |
+|{        |Début de paragraphe |
+|}        |Fin de paragraphe   |
+|e ou E   |Fin du mot courant  |
+|b ou B   |Mot précédent       |
+|w ou W   |Mot suivant         |
+
+###Actions
+
+|Commande |Description                  |
+|---------|-----------------------------|
+|dw       |Supprimer un mot             |
+|dd       |Supprimer une ligne          |
+|.        |Répéter la dernière action   |
+|5.       |Répéter 5x la dernière action|
 
 ##<a name="tips"></a>Commandes utiles
 
-###Configuration matérielle et logicielle (*uname*)
+###Configuration matérielle et logicielle (`uname`)
 
 ```
 -- Version du noyau Linux (ex: 3.13.0-71-generic)
@@ -66,7 +93,7 @@ $ uname -p
 $ uname -i
 ```
 
-###Connaître la distribution (*lsb_release*)
+###Connaître la distribution (`lsb_release`)
 
 ```
 -- LSB : Linux Standard Base / Informations sur la distribution Linux
