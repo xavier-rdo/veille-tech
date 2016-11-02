@@ -4,8 +4,11 @@
 
 * [Les Promesses](#promises)
 * [Itérateurs & générateurs](#iterators)
+* [Autres nouveautés d'ES6](#misc)
 
 ## <a name="promises"></a>Les Promesses en JS
+
+Réf. (spécification): https://promisesaplus.com/
 
 Une promesse peut avoir quatre états :
 
@@ -116,9 +119,34 @@ getJSON('story.json').then(function(story) {
 
 Par exemple, si `story.chapterUrls[0]` échoue (erreur 500), la clause `catch` s'exécute directement. En revanche, le code qui suit l'erreur interceptée s'exécute.
 
+### Promesses parallèles
+
+```
+let myPromise1 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        resolve('myPromise1 succeeded');
+    }, 1000);
+});
+
+let myPromise2 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+        resolve('myPromise2 succeeded');
+    }, 1500);
+});
+
+Promise.all([myPromise1, myPromise2])
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(err) {
+        console.log(err);
+    })
+;
+```
+
 ### API Promise
 
-Méthodes statiques :
+#### Méthodes statiques :
 
 |Méthode|Description|
 |-------|-----------|
@@ -129,7 +157,7 @@ Méthodes statiques :
 |Promise.all(array)|Crée une promesse qui réussit lorsque chaque élément réussit ou échoue si l'un des éléments échoue|
 |Promise.race(array)|Crée une promesse qui réussit dès qu'un élément réussit ou échoue dès qu'un élément échoue|
 
-Constructeur :
+#### Constructeur :
 
 `new Promise(function(resolve, reject) {});` 
 
@@ -137,13 +165,13 @@ Constructeur :
 * resolve(obj): la promesse réussit en retournant `obj`
 * reject(obj): la promesse échoue en retournant `obj` (instance de Error)
 
-Méthodes d'instance :
+#### Méthodes d'instance :
 
 `promise.then(onFullfilled, onRejected)` : `onFullfilled` est appelée lorsque le promesse réussit, `onRejected` lorsque la promesse échoue. Les deux callbacks ont un seul paramètre : la valeur de succès ou la cause du rejet. `then()` retourne une nouvelle promesse équivalente à la valeur retournée par `onFullfilled|onRejected` après avoir été passée à la méthode `Promise.resolve`. Si une erreur se produit dans le callback, la promesse retournée est rejetée avec cette erreur.
 
 `promise.catch(onRejected)` = équivalent à `promise.then(undefined, onRejected)`
 
-### Support :
+### Support des promesses :
 
 Chrome 32, Opera 19, Firefox 29, Safari 8 & Microsoft Edge.
 
@@ -154,8 +182,57 @@ Chrome 32, Opera 19, Firefox 29, Safari 8 & Microsoft Edge.
 
 ## <a name="iterators"></a>Itérateurs & générateurs
 
-@todo: à compléter
+Un générateur est un type de fonction spécial qui fonctionne comme une fabrique (*factory*) d'itérateurs. Une fonction devient un générateur lorsqu'elle contient une ou plusieurs expressions `yield` et qu'elle utilise la syntaxe `function*`.
+
+```
+function* idMaker() {
+  var index = 0;
+  while(true)
+      yield index++;
+}
+
+var gen = idMaker();
+console.log(gen.next().value); // 0
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+// ...
+```
 
 ### Resources
 
 * [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/iterateurs_et_generateurs)
+
+## <a name="misc"></a>Autres nouveautés d'ES6
+
+### `const` & `let`
+
+`let` permet de déclarer des variables dont la portée est limitée à celle du bloc dans lequel elles sont déclarées (`var` permet quant à lui de définir une variable globale ou locale à une fonction, sans distinction des blocs).
+
+Dans l'exemple ci-dessous, `maVariable` n'est pas définie en dehors du bloc `if`:
+
+```
+if (true) {
+  let maVariable = 'foo';
+}
+console.log(maVariable); // ReferenceError
+```
+
+`const` permet de créer une constante nommée accessible uniquement en lecture (*ie* l'identifiant ne peut pas être réaffecté). Ex: `const MA_CONSTANTE = 'foo';`.
+
+### Proxy & Reflect
+
+* [Proxy sur MDN ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+* [Reflect sur MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+* [Article de "Putain de Code" sur Proxy](http://putaindecode.io/fr/articles/js/es2015/proxy/)
+
+### Divers
+
+* Arrow functions (`=>`)
+* spread operator (`...`)
+* template strings (backtick)
+* destructuring (`var [one, two] = ['one', 'two'];`)
+* `Set` (pour stocker des valeurs uniques) et `Set.prototype.entries` (iterator)
+* `Map` (dictionnaire) et `Map.prototype.entries` (iterator)
+* `for of` (parcourir un objet itérable)
+* `Object.assign()` (cloner un objet existant)
+* mot-clé `static`: pour définir une méthode statique d'une classe
