@@ -7,6 +7,7 @@
 * [Affichage des listes](#list)
 * [Les composants](#components)
 * [Ressources](#resources)
+* [L'éco-système de Vue.js](#ecosystem)
 
 ##Références :
 
@@ -210,6 +211,19 @@ Exemple:
 
 * [Guide officiel de Vue.js](https://vuejs.org/v2/guide/)
 * [Exemples (site officiel)](https://vuejs.org/v2/examples/)
-* [Comment intégrer Vue.js dans une application Symfony](https://blog.elao.com/fr/dev/comment-integrer-vue-js-application-symfony/)
-* [Applications Frontend avec Vue.js et vue-cli](https://blog.elao.com/fr/dev/realisez-une-application-vue-js-avec-vue-cli/)
-* [Building a Vue.js app using vue-router](https://www.liquidlight.co.uk/blog/article/building-a-vue-v2-js-app-using-vue-router/)
+* [Comment intégrer Vue.js dans une application Symfony (Blog Elao)](https://blog.elao.com/fr/dev/comment-integrer-vue-js-application-symfony/)
+* [Applications Frontend avec Vue.js et vue-cli (Blog Elao)](https://blog.elao.com/fr/dev/realisez-une-application-vue-js-avec-vue-cli/)
+* [Building a Vue.js app using vue-router (LiquidLight)](https://www.liquidlight.co.uk/blog/article/building-a-vue-v2-js-app-using-vue-router/)
+
+##<a name="ecosystem"></a>L'éco-système de Vue.js
+
+* [awesome-vue](https://github.com/vuejs/awesome-vue) : recense la plupart des ressources (tutoriels, plugins, librairies, etc.) autour de Vue.js
+* [axios](https://github.com/mzabriskie/axios) : client Http Javascript
+* [HackerNews clone with Vue.js](https://github.com/vuejs/vue-hackernews) : clone de HackerNews développé avec Vue.js (à titre de démo)
+* [Nuxt.js](https://nuxtjs.org/) : framework Vue.js pour développer des applications Vue.js rendues par le serveur
+* [vue-cli](https://github.com/vuejs/vue-cli) : outil CLI de génération de projets Vue (déclinaisons pour Webpack, Browserify, ou template simple)
+* [vue-devtools](vue-devtools) : extension Chrome pour débuguer les appli. Vue.js
+* [vue-loader](http://vue-loader.vuejs.org/en/) : loader Webpack pour transformer le code des composants Vue (*.vue) en modules JS
+* [vue-resource](https://github.com/pagekit/vue-resource) : client Http pour Vue.js
+* [vue-router](https://github.com/vuejs/vue-router) : router officiel de Vue.js
+* [vuex](https://github.com/vuejs/vuex) : gestionnaire d'états centralisé (store partagé par tous les composants d'une application Vue.js)
