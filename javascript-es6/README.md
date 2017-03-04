@@ -5,6 +5,7 @@
 * [Les Promesses](#promises)
 * [Itérateurs & générateurs](#iterators)
 * [Autres nouveautés d'ES6](#misc)
+* [Ressources](#ressources)
 
 ## <a name="promises"></a>Les Promesses en JS
 
@@ -236,3 +237,7 @@ console.log(maVariable); // ReferenceError
 * `for of` (parcourir un objet itérable)
 * `Object.assign()` (cloner un objet existant)
 * mot-clé `static`: pour définir une méthode statique d'une classe
+
+## <a name="resources"></a>Ressources
+
+* [ES6 in Depth (ponyfoo)](https://ponyfoo.com/articles/tagged/es6-in-depth)
