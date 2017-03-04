@@ -6,6 +6,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [Design Patterns](./design-patterns/README.md)
 * [Docker](./docker/README.md)
 * [Domain Driven Design](./ddd/README.md)
+* [Flux, React & Redux](./flux-react-redux/README.md)
 * [Golang](./golang/README.md)
 * [Javascript/ES6](./javascript-es6/README.md)
 * [MongoDB](./mongodb/README.md)
