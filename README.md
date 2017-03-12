@@ -9,6 +9,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [Flux, React & Redux](./flux-react-redux/README.md)
 * [Golang](./golang/README.md)
 * [Javascript/ES6](./javascript-es6/README.md)
+* [Javascript/Webpack](./javascript-webpack/README.md)
 * [MongoDB](./mongodb/README.md)
 * [Node.js](./nodejs/README.md)
 * [RabbitMQ](./rabbitmq/README.md)
