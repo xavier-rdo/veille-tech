@@ -8,7 +8,8 @@ Site officiel: [http://redux.js.org/](http://redux.js.org/)
 
 * [Concepts clés](#concepts)
 * [Les trois principes de base](#principles)
-* [Exemples](#examples)
+* [Exemple d'une Todo List](#example)
+* [Autres exemples](#examples)
 * [Ressources & tutoriels](#resources)
 * [Outillage](#tools)
 
@@ -91,11 +92,18 @@ Et enfin, exemple d'une fonction qui gère l'état complet de l'application en s
 
 * *Un seul store* pour maintenir l'état de l'application (*object tree*)
 * *L'état est en lecture seule*. L'émission d'actions est le seul moyen de le modifier.
-* Les modifications sont faites à l'aide de pures fonctions JS (*reducers*)
+* Les modifications sont faites à l'aide de fonctions JS pures (*reducers*).
 
-##<a name="examples"></a>Exemples :
+>>Une fonction est 'pure' si elle n'altère pas les données (aucune mutation d'arguments), n'a aucun effet de bord, ne fait aucun appel API, n'appelle aucune fonction impure (`Date.now()` par exemple est impure), etc. Une fonction pure se contente de faire des calculs et de retourner un résultat prévisible.
+
+##<a name="example"></a>Un exemple de TodoList
+
+[Exemple pas à pas d'une Todo-List](todo-list-example/todo-list-example.md) avec Redux & Create React App
+
+##<a name="examples"></a>Autres exemples :
 
 * [http://redux.js.org/docs/introduction/Examples.html](http://redux.js.org/docs/introduction/Examples.html) : compteur, liste de Todo's, panier, arbre, asynchrone, *Real World* (exemple avancé), etc.
+* [Full-Stack Redux Tutorial](https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) : exemple TDD, React, Redux & Immutable
 
 ##<a name="resources"></a>Ressources & tutoriels
 
@@ -114,6 +122,10 @@ Et enfin, exemple d'une fonction qui gère l'état complet de l'application en s
 * [Awesome Redux](https://github.com/xgrommx/awesome-redux)
 
 * [Learn React & Redux](https://www.youtube.com/watch?v=d0oUGmSE6IY&list=PLJBrYU54JD2pTblB20OmV7GL6H5J-p2g8&index=1) : un peu moins d'une trentaine de vidéos démontrant les différents aspects de React/Redux à travers l'exemple d'une application de gestion d'utilisateurs, avec redux-minimal (*starter kit*)
+
+* [Step by Step Guide To Building React Redux Apps](https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a) par rajaraodv
+
+* [A Guide For Building A React Redux CRUD App](https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f) par rajaraodv. Application CRUD Redux/React avec requêtes asynchrones et gestion des réponses serveur
 
 ##<a name="tools"></a>Outillage :
 
