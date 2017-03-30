@@ -70,7 +70,7 @@ Référence : [http://redux.js.org/docs/basics/Actions.html](http://redux.js.org
 
 `actions/index.js` :
 
-```
+```js
 	/* Actions as constants */
 	export const ADD_TODO = 'ADD_TODO'
 	export const TOGGLE_TODO = 'TOGGLE_TODO'
@@ -119,7 +119,7 @@ Un `reducer` :
 
 `reducers/index.js` :
 
-```
+```js
 	import { combineReducers } from 'redux'
 	import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from './../actions'
 	const { SHOW_ALL } = VisibilityFilters
@@ -191,7 +191,7 @@ Référence : [http://redux.js.org/docs/basics/Store.html](http://redux.js.org/d
 
 `index.js` :
 
-```
+```js
 	// Conserver éventuellement le code initial généré par Create React App
 	// ...
 
@@ -211,7 +211,7 @@ La méthode `createStore` accepte en second argument un état initial.  C'est no
 
 Ajouter les lignes suivantes au fichier `index.js`:
 
-```
+```js
 
 import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './actions'
 
