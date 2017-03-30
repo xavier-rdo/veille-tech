@@ -12,6 +12,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [Javascript/Webpack](./javascript-webpack/README.md)
 * [MongoDB](./mongodb/README.md)
 * [Node.js](./nodejs/README.md)
+* [Oauth2](./oauth2/README.md)
 * [RabbitMQ](./rabbitmq/README.md)
 * [Redis](./redis/README.md)
 * [Symfony](./symfony/README.md)
