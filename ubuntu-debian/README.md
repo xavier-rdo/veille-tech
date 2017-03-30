@@ -1,4 +1,4 @@
-#Ubuntu/Debian
+# Ubuntu/Debian
 
 ![Logo Ubuntu](img/ubuntu-logo.png)
 ![Logo Debian](img/debian-logo.png)
@@ -8,7 +8,7 @@
 * [Mémo Vim](#vim)
 * [Commandes utiles](#tips)
 
-##<a name="paquets"></a>Gestion des paquets
+## <a name="paquets"></a>Gestion des paquets
 
 Réf. : http://doc.ubuntu-fr.org/apt-get
 
@@ -29,7 +29,7 @@ $ sudo apt-get purge postgresql-server-9.4
 $ sudo apt-get clean
 ```
 
-##<a name="files"></a>Dossiers et fichiers
+## <a name="files"></a>Dossiers et fichiers
 
 ```
 -- Rechercher un fichier :
@@ -52,9 +52,9 @@ $ tar -zxvf votre_archive.tar.gz
 -- z : compression Gzip
 ```
 
-##<a name="vim"></a>Mémo Vim
+## <a name="vim"></a>Mémo Vim
 
-###Navigation
+### Navigation
 
 |Commande |Description         |
 |---------|--------------------|
@@ -71,7 +71,7 @@ $ tar -zxvf votre_archive.tar.gz
 |b ou B   |Mot précédent       |
 |w ou W   |Mot suivant         |
 
-###Actions
+### Actions
 
 |Commande |Description                  |
 |---------|-----------------------------|
@@ -80,9 +80,9 @@ $ tar -zxvf votre_archive.tar.gz
 |.        |Répéter la dernière action   |
 |5.       |Répéter 5x la dernière action|
 
-##<a name="tips"></a>Commandes utiles
+## <a name="tips"></a>Commandes utiles
 
-###Configuration matérielle et logicielle (`uname`)
+### Configuration matérielle et logicielle (`uname`)
 
 ```
 -- Version du noyau Linux (ex: 3.13.0-71-generic)
@@ -93,7 +93,7 @@ $ uname -p
 $ uname -i
 ```
 
-###Connaître la distribution (`lsb_release`)
+### Connaître la distribution (`lsb_release`)
 
 ```
 -- LSB : Linux Standard Base / Informations sur la distribution Linux
