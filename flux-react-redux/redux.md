@@ -13,7 +13,7 @@ Site officiel: [http://redux.js.org/](http://redux.js.org/)
 * [Ressources & tutoriels](#resources)
 * [Outillage](#tools)
 
-##<a name="concepts"></a>Concepts clés : état, actions & *reducers* (fonctions)
+## <a name="concepts"></a>Concepts clés : état, actions & *reducers* (fonctions)
 
 Source: [http://redux.js.org/docs/introduction/CoreConcepts.html](http://redux.js.org/docs/introduction/CoreConcepts.html)
 
@@ -88,7 +88,7 @@ Et enfin, exemple d'une fonction qui gère l'état complet de l'application en s
     }
 ```
 
-##<a name="principles"></a>Les trois principes de base de Redux :
+## <a name="principles"></a>Les trois principes de base de Redux :
 
 * *Un seul store* pour maintenir l'état de l'application (*object tree*)
 * *L'état est en lecture seule*. L'émission d'actions est le seul moyen de le modifier.
@@ -96,16 +96,16 @@ Et enfin, exemple d'une fonction qui gère l'état complet de l'application en s
 
 >>Une fonction est 'pure' si elle n'altère pas les données (aucune mutation d'arguments), n'a aucun effet de bord, ne fait aucun appel API, n'appelle aucune fonction impure (`Date.now()` par exemple est impure), etc. Une fonction pure se contente de faire des calculs et de retourner un résultat prévisible.
 
-##<a name="example"></a>Un exemple de TodoList
+## <a name="example"></a>Un exemple de TodoList
 
 [Exemple pas à pas d'une Todo-List](todo-list-example/todo-list-example.md) avec Redux & Create React App
 
-##<a name="examples"></a>Autres exemples :
+## <a name="examples"></a>Autres exemples :
 
 * [http://redux.js.org/docs/introduction/Examples.html](http://redux.js.org/docs/introduction/Examples.html) : compteur, liste de Todo's, panier, arbre, asynchrone, *Real World* (exemple avancé), etc.
 * [Full-Stack Redux Tutorial](https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) : exemple TDD, React, Redux & Immutable
 
-##<a name="resources"></a>Ressources & tutoriels
+## <a name="resources"></a>Ressources & tutoriels
 
 * [http://redux.js.org/](http://redux.js.org/)
 
@@ -127,7 +127,7 @@ Et enfin, exemple d'une fonction qui gère l'état complet de l'application en s
 
 * [A Guide For Building A React Redux CRUD App](https://medium.com/@rajaraodv/a-guide-for-building-a-react-redux-crud-app-7fe0b8943d0f) par rajaraodv. Application CRUD Redux/React avec requêtes asynchrones et gestion des réponses serveur
 
-##<a name="tools"></a>Outillage :
+## <a name="tools"></a>Outillage :
 
 * [Redux sur npm](https://www.npmjs.com/package/redux)
 * [react-redux](https://www.npmjs.com/package/react-redux) Adapteur officiel pour React (*React bindings*)
