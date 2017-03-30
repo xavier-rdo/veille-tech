@@ -19,7 +19,7 @@ Une promesse peut avoir quatre états :
 * `settled` (succès ou échec)
 
 ### Création :
-```
+```js
 var promise = new Promise(function(resolve, reject) {
     // Do a thing, possibly async, then ...
     
@@ -33,7 +33,7 @@ var promise = new Promise(function(resolve, reject) {
 
 ### Usage :
 
-```
+```js
 promise.then(function(result) {
     console.log(result); // 'It worked!'
 }, function(err) {
@@ -54,7 +54,7 @@ Noter que l'API promesses traite tout objet possédant une méthode `then` comme
 
 Les promesses peuvent être utilisées pour chaîner des actions asynchrones. Lorsqu'un callback d'un `then` retourne une valeur, le `then()` suivant est appelé avec cette valeur. Mais si l'on retourne une promesse (ou `thenable`), le `then()` suivant attend le résultat et n'est appelé que lorsque la promesse a abouti à un échec ou un succès (`settled`).
 
-```
+```js
 getJSON('story.json').then(function(story) {
   return getJSON(story.chapterUrls[0]);
 }).then(function(chapter1) {
@@ -66,7 +66,7 @@ getJSON('story.json').then(function(story) {
 
 `then()` prend deux arguments : l'un en cas de succès, l'autre en cas d'échec :
 
-```
+```js
 get('story.json').then(function(response) {
   console.log("Success!", response);
 }, function(error) {
@@ -76,7 +76,7 @@ get('story.json').then(function(response) {
 
 Il est possible d'utiliser une clause `catch()`:
 
-```
+```js
 get('story.json').then(function(response) {
   console.log("Success!", response);
 }).catch(function(error) {
@@ -88,7 +88,7 @@ get('story.json').then(function(response) {
 
 Le `reject` a lieu si une promesse est explicitement rejetée, mais également implicitement si une erreur est levée dans le callback passé au constructeur de la promesse :
 
-```
+```js
 var jsonPromise = new Promise(function(resolve, reject) {
   // JSON.parse throws an error if you feed it some
   // invalid JSON, so this implicitly rejects:
@@ -106,7 +106,7 @@ jsonPromise.then(function(data) {
 
 En cas d'échec, tous les callbacks de succès avant le `catch()` seront ignorés :
 
-```
+```js
 getJSON('story.json').then(function(story) {
   return getJSON(story.chapterUrls[0]);
 }).then(function(chapter1) {
@@ -122,7 +122,7 @@ Par exemple, si `story.chapterUrls[0]` échoue (erreur 500), la clause `catch` s
 
 ### Promesses parallèles
 
-```
+```js
 let myPromise1 = new Promise(function(resolve, reject) {
     setTimeout(function() {
         resolve('myPromise1 succeeded');
@@ -185,7 +185,7 @@ Chrome 32, Opera 19, Firefox 29, Safari 8 & Microsoft Edge.
 
 Un générateur est un type de fonction spécial qui fonctionne comme une fabrique (*factory*) d'itérateurs. Une fonction devient un générateur lorsqu'elle contient une ou plusieurs expressions `yield` et qu'elle utilise la syntaxe `function*`.
 
-```
+```js
 function* idMaker() {
   var index = 0;
   while(true)
@@ -211,7 +211,7 @@ console.log(gen.next().value); // 2
 
 Dans l'exemple ci-dessous, `maVariable` n'est pas définie en dehors du bloc `if`:
 
-```
+```js
 if (true) {
   let maVariable = 'foo';
 }
