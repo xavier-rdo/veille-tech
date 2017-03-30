@@ -11,14 +11,14 @@ Site officiel : [https://webpack.js.org](https://webpack.js.org)
 * [Débuter](#start)
 * [Outils de développement](#dev-tools)
 
-##<a name="concepts"></a> Les quatre concepts clés de Webpack
+## <a name="concepts"></a> Les quatre concepts clés de Webpack
 
 * __entry__ : le point d'entrée (Ex: _index.js_, _app.js_) à partir duquel Webpack construit le graphe des dépendances
 * __output__ : fichier(s) en sortie où Webpack écrira le code empaqueté (_bundled_). Ex: _dist/bundle.js_
 * __loaders__ : transforment les fichiers d'entrée en modules
 * __plugins__ : offrent des fonctionnalités supplémentaires, comme par exemple la minification, l'_uglyfication_, etc.
 
-##<a name="install"></a> Installation
+## <a name="install"></a> Installation
 
 Webpack nécessite une version récente de Node.js.
 
@@ -35,9 +35,9 @@ Le binaire de Webpack est alors disponible en ligne de commande : `./node_module
 
 __Nota__ : privilégier une installation locale pour gérer les différences de versions entre projets ; l'installation globale est déconseillée.
 
-##<a name="start"></a> Débuter
+## <a name="start"></a> Débuter
 
-Etat donné un fichier _app/index.js_ qui utilise par exemple _lodash_ comme dépendance (`import _ from 'lodash'`), lancer la commande suivante : 
+Etant donné un fichier _app/index.js_ qui utilise par exemple _lodash_ comme dépendance (`import _ from 'lodash'`), lancer la commande suivante : 
 
 ```shell
     ./node_modules/.bin/webpack app/index.js dist/bundle.js
@@ -79,7 +79,7 @@ Ajouter cette entrée au fichier `package.json` :
 
 Désormais, la commande `npm run build` peut être plus simplement utilisée pour exécuter Webpack.
 
-##<a name="dev-tools"></a> Outils de développement
+## <a name="dev-tools"></a> Outils de développement
 
 Référence : [https://webpack.js.org/guides/development/](https://webpack.js.org/guides/development/)
 
