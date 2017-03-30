@@ -241,3 +241,4 @@ console.log(maVariable); // ReferenceError
 ## <a name="resources"></a>Ressources
 
 * [ES6 in Depth (ponyfoo)](https://ponyfoo.com/articles/tagged/es6-in-depth)
+* [Exploring ES6](http://exploringjs.com/es6/index.html)
