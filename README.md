@@ -16,6 +16,6 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [Oauth2](./oauth2/README.md)
 * [RabbitMQ](./rabbitmq/README.md)
 * [Redis](./redis/README.md)
-* [Symfony](./symfony/README.md)
+* [Symfony, Twig & Doctrine](./symfony/README.md)
 * [Ubuntu/Debian](./ubuntu-debian/README.md)
 * [Vue.js](./vuejs/README.md)
