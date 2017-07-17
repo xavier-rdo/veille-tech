@@ -102,3 +102,9 @@ $ lsb_release --all
 -- Release:    14.04
 -- Codename:   trusty
 ```
+
+### Liste des ports sur écoute
+
+```shell
+sudo netstat -anp
+```
