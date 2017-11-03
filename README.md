@@ -2,6 +2,7 @@
 
 Notes personnelles, références, articles de blogs, trucs et astuces, snippets & mémos dans le cadre de ma veille technique.
 
+* [API Design](./api-design/README.md)
 * [ArangoDB](./arangodb/README.md)
 * [Design Patterns](./design-patterns/README.md)
 * [Docker](./docker/README.md)
