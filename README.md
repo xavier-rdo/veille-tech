@@ -9,6 +9,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [Domain Driven Design](./ddd/README.md)
 * [Elastic Search](./elastic-search/README.md)
 * [Flux, React & Redux](./flux-react-redux/README.md)
+* [Git](./git/README.md)
 * [Golang](./golang/README.md)
 * [Javascript/ES6](./javascript-es6/README.md)
 * [Javascript/Webpack](./javascript-webpack/README.md)
