@@ -1,4 +1,4 @@
-#Vue.js
+# Vue.js
 
 ![Logo Vue.js](img/logo.png)
 
@@ -8,13 +8,14 @@
 * [Les composants](#components)
 * [Ressources](#resources)
 * [L'éco-système de Vue.js](#ecosystem)
+* [Vuex (State manager for Vue.js)](./vuex.md)
 
-##Références :
+## Références :
 
 * Guide officiel : [https://vuejs.org/v2/guide/](https://vuejs.org/v2/guide/)
 * Blog Elao : [Comment intégrer Vue.js dans une app Symfony](https://blog.elao.com/fr/dev/comment-integrer-vue-js-application-symfony/)
 
-##<a name="templates"></a>Templates: syntaxe
+## <a name="templates"></a>Templates: syntaxe
 
 Réf.: [https://vuejs.org/v2/guide/syntax.html](https://vuejs.org/v2/guide/syntax.html)
 
@@ -81,7 +82,7 @@ Raccourcis (`v-bind` et `v-on`) :
     <a @click="doSomething"></a>
 ```
 
-##<a name="style"></a>Classes CSS et styles liés au modèle
+## <a name="style"></a>Classes CSS et styles liés au modèle
 
 Réf.: [https://vuejs.org/v2/guide/class-and-style.html](https://vuejs.org/v2/guide/class-and-style.html)
 
@@ -105,7 +106,7 @@ data: {
 
 `<div v-bind:class="[{ active: isActive }, errorClass]">`
 
-##<a name="list"></a>Affichage de listes
+## <a name="list"></a>Affichage de listes
 
 Réf.: [https://vuejs.org/v2/guide/list.html](https://vuejs.org/v2/guide/list.html)
 
@@ -123,7 +124,7 @@ Noter que les composants ont leur propre scope privé. Il faut utiliser les `pro
     </my-component>
 ```
 
-##<a name="components"></a>Les composants
+## <a name="components"></a>Les composants
 
 Réf.: [https://vuejs.org/v2/guide/components.html](https://vuejs.org/v2/guide/components.html)
 
@@ -207,7 +208,7 @@ Exemple:
     })
 ```
 
-##<a name="resources"></a>Ressources
+## <a name="resources"></a>Ressources
 
 * [Guide officiel de Vue.js](https://vuejs.org/v2/guide/)
 * [Exemples (site officiel)](https://vuejs.org/v2/examples/)
@@ -215,7 +216,7 @@ Exemple:
 * [Applications Frontend avec Vue.js et vue-cli (Blog Elao)](https://blog.elao.com/fr/dev/realisez-une-application-vue-js-avec-vue-cli/)
 * [Building a Vue.js app using vue-router (LiquidLight)](https://www.liquidlight.co.uk/blog/article/building-a-vue-v2-js-app-using-vue-router/)
 
-##<a name="ecosystem"></a>L'éco-système de Vue.js
+## <a name="ecosystem"></a>L'éco-système de Vue.js
 
 * [awesome-vue](https://github.com/vuejs/awesome-vue) : recense la plupart des ressources (tutoriels, plugins, librairies, etc.) autour de Vue.js
 * [axios](https://github.com/mzabriskie/axios) : client Http Javascript
