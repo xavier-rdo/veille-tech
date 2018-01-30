@@ -11,6 +11,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [Flux, React & Redux](./flux-react-redux/README.md)
 * [Git](./git/README.md)
 * [Golang](./golang/README.md)
+* [GraphQL](./graphql/README.md)
 * [Javascript/ES6](./javascript-es6/README.md)
 * [Javascript/Webpack](./javascript-webpack/README.md)
 * [MongoDB](./mongodb/README.md)
