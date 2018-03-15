@@ -8,6 +8,7 @@ __Références :__
 
 * [Learn GraphQL](http://graphql.org/learn/)
 * [The Fullstack Tutorial for GraphQL](https://www.howtographql.com/)
+* [GraphiQL (An in-browser IDE for exploring GraphQL.)](https://github.com/graphql/graphiql)
 
 __Table des matières :__
 
@@ -21,6 +22,37 @@ __Table des matières :__
 ### `Queries` et `Mutations`
 
 Réf.: http://graphql.org/learn/queries/
+
+Exemple de query avec GraphiQL :
+
+```
+query User {
+  User(uuid: "83cfd26b-65bd-41c1-b267-1965e5a02b57") {
+    uuid
+    firstname
+    lastname
+    createdAt
+    updatedAt
+  }
+}
+```
+
+Exemple de mutation avec GraphiQL :
+
+```
+mutation EditUser {
+  EditUser(uuid: "21dd8fc8-856e-4acc-9aa9-f1147c7b2d68", payload: {
+    firstname: "John",
+    lastname: "Doe"
+  }) {
+    uuid
+    firstname
+    lastname
+    createdAt
+    updatedAt
+  }
+}
+```
 
 ### `Schémas` et `Types`
 
@@ -42,4 +74,3 @@ Réf.: http://graphql.org/learn/schema/
 
 * [Apollo/GraphQL integration for VueJS (Tutorial)](https://github.com/akryum/vue-apollo)
 * [The Fullstack Tutorial for GraphQL](https://www.howtographql.com/)
-
