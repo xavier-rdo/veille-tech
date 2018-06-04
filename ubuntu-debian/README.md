@@ -108,3 +108,17 @@ $ lsb_release --all
 ```shell
 sudo netstat -anp
 ```
+
+### La commande `screen`
+
+```shell
+-- Créer un screen nommé
+$ screen -S my_screen
+-- Sortir du screen
+$ CTL A puis CTL D
+-- Rattacher un screen
+$ screen -r my_screen
+-- Quitter et fermer le screen
+exit;
+
+```
