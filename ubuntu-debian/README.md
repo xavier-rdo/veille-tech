@@ -116,6 +116,8 @@ sudo netstat -anp
 $ screen -S my_screen
 -- Sortir du screen
 $ CTL A puis CTL D
+-- Liste des screens en cours
+$ screen -ls
 -- Rattacher un screen
 $ screen -r my_screen
 -- Quitter et fermer le screen
