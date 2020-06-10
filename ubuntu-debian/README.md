@@ -50,6 +50,13 @@ $ tar -zxvf votre_archive.tar.gz
 -- f : utilise le fichier passé en paramètre
 -- v : mode verbeux
 -- z : compression Gzip
+
+-- Voir le contenu d'un fichier zippé
+
+-- Method #1
+$ gzip -dc /var/log/syslog.7.gz
+-- Method #2
+$ zcat /var/log/syslog.7.gz
 ```
 
 ## <a name="vim"></a>Mémo Vim
