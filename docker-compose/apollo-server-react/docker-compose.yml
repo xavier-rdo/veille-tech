@@ -1,0 +1,68 @@
+############
+# Usage
+############
+
+# Start containers [and build images] : `docker-compose up [--build]`
+# Open shell in server service : `docker-compose exec server /bin/sh`
+# Open shell in client service : `docker-compose exec client /bin/sh`
+# List running services/containers : `docker-compose ps`
+# List all services/containers (running or not) : `docker-compose ps --all`
+# Start|Stop|Remove services/containers : `docker-compose start|stop|rm`
+# Update images : `docker-compose pull`
+
+########################################
+# `docker-compose ps` output example
+########################################
+
+#      Name                   Command               State           Ports         
+# --------------------------------------------------------------------------------
+# start_client_1   docker-entrypoint.sh npm r ...   Up      0.0.0.0:3000->3000/tcp
+# start_server_1   docker-entrypoint.sh npm r ...   Up      0.0.0.0:4000->4000/tcp
+
+
+version: '3'
+
+services:
+
+#########################################
+# Setup GraphQL server container
+#########################################
+
+  server:
+    build: ./server
+    environment:
+      # APP_SERVER_PORT & NODE_ENV must be defined in ./.env file to be loaded by docker-compose
+      APP_SERVER_PORT: ${APP_SERVER_PORT}
+      NODE_ENV: ${NODE_ENV}
+    expose:
+      - ${APP_SERVER_PORT}
+    ports: 
+      - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+    volumes:
+      - ./server/src:/srv/app/graphql-react-example-server/src
+    command: npm run start
+
+#########################################
+# Setup React client container
+#########################################
+
+  client:
+    build: ./client
+    # By default, dev server is stopped when code has been saved --> keep container alive yet:
+    stdin_open: true
+    environment:
+      - REACT_APP_PORT=${REACT_APP_PORT}
+    expose:
+      - ${REACT_APP_PORT}
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    volumes:
+      - ./client/src:/srv/app/graphql-react-example-client/src
+      - ./client/public:/srv/app/graphql-react-example-client/public
+    links:
+      - server
+    command: npm run start
+
+######################################################################################################################################
+# Inspired by https://medium.com/@xiaolishen/develop-in-docker-a-node-backend-and-a-react-front-end-talking-to-each-other-5c522156f634
+######################################################################################################################################
