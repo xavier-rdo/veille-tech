@@ -6,8 +6,8 @@
 * [Les images Docker](#images)
 * [Les containers](#containers)
 * [Les volumes](#volumes)
+* [Exemple d'un container Postgres](#exemple)
 * [Docker Compose](#compose)
-* [Exemple](#exemple)
 * [Sur la toile](#links)
 
 ## Références :
@@ -151,12 +151,6 @@ $ echo "Hello !!!" > /tmp/hello
 $ docker run -d -P --name web -v /src/webapp:/webapp training/webapp python app.py
 ```
 
-## <a name="compose">Docker Compose
-
-Réf.: https://docs.docker.com/compose/overview/
-
-@todo: à compléter
-
 ## <a name="exemple">Exemple (PostgreSQL)
 
 ```shell
@@ -169,6 +163,11 @@ $ docker run --name postgres -e POSTGRES_PASSWORD=postgres -d postgres:9.6
 ## Se connecter depuis une console psql :
 $ docker run -it --rm --link postgres:pg postgres psql -h postgres -U postgres
 ```
+## <a name="compose">Docker Compose
+
+Réf.: https://docs.docker.com/compose/overview/
+
+Cf. le [README dédié](../docker-compose) pour des exemples d'utilisation.
 
 ## <a name="links">Sur la toile
 

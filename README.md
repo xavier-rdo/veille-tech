@@ -6,6 +6,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [ArangoDB](./arangodb/README.md)
 * [Design Patterns](./design-patterns/README.md)
 * [Docker](./docker/README.md)
+* [Docker-compose](./docker-compose/README.md)
 * [Domain Driven Design](./ddd/README.md)
 * [Elastic Search](./elastic-search/README.md)
 * [Flux, React & Redux](./flux-react-redux/README.md)
