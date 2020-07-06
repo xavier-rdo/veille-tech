@@ -18,6 +18,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 * [MongoDB](./mongodb/README.md)
 * [Node.js](./nodejs/README.md)
 * [Oauth2](./oauth2/README.md)
+* [PHP/Blackfire](./php-blackfire/README.md)
 * [RabbitMQ](./rabbitmq/README.md)
 * [Redis](./redis/README.md)
 * [Symfony, Twig & Doctrine](./symfony/README.md)
