@@ -11,3 +11,8 @@
 * `git rebase -i --autosquash <initial-base-commit-id>`
 * `git push` ou `git push --force`
 
+## Restaurer une branche dans un état correct après un `git push --force` erroné
+
+* `git reflog`
+* Repérer le hash de commit de l'état correct 
+* `git reset --hard [hash]`
