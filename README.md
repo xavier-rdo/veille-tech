@@ -4,6 +4,7 @@ Notes personnelles, références, articles de blogs, trucs et astuces, snippets 
 
 * [API Design](./api-design/README.md)
 * [ArangoDB](./arangodb/README.md)
+* [Composer](./composer/README.md)
 * [Design Patterns](./design-patterns/README.md)
 * [Docker](./docker/README.md)
 * [Docker-compose](./docker-compose/README.md)
